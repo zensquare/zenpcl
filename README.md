@@ -42,9 +42,9 @@ for($i = 0; $i < 5; $i++){ //Get the next 5 valid dates
 
 Core Methods
 -----------------------
-###parse(String expression)
+#####parse(String expression)
 
-###nextValid(DateTime/String/Null date)
+#####nextValid(DateTime/String/Null date)
  - if Null - on first call new DateTime(), on second call value of last call
  - if String - new DateTime(expression) - read datetime documentation
  - if DateTime - next valid after the given date time
