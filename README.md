@@ -20,7 +20,7 @@ ZenJCL does not
 Hello World!
 ----------------------
 
-```
+```php
 $cron = new Cron();
 $cron->parse("*/5 1 */2 * * 2015-2020"); //Parse an expression
 echo $cron->toString(false) . "\n"; //Print it in "English"
@@ -29,8 +29,8 @@ for($i = 0; $i < 5; $i++){ //Get the next 5 valid dates
 }
 ```
 
-As a code igniter library
-```
+##As a code igniter library
+```php
 $this->load->library('cron');
 $this->cron->parse("*/5 1 */2 * * 2015-2020"); //Parse an expression
 echo $this->cron->toString(false) . "\n"; //Print it in "English"
