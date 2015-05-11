@@ -393,8 +393,9 @@ abstract class ScheduleField implements PartParent {
                 $cfp->field = $this;
                 $cfp->parent = $parent;
                 foreach ($parts as $part) {
-                    $cfp->addPart(parseField($part, $cfp));
+                    $cfp->addPart($this->parseField($part, $cfp));
                 }
+                return $cfp;
             } else {
                 $part = $parts[0];
                 if (strpos($part, "/") !== FALSE) {
@@ -891,7 +892,7 @@ class CompoundFieldPart extends FieldPart implements PartParent {
     }
     
     public function addPart($part){
-        $this->parts($part);
+        $this->parts[] = $part;
         $part->parent = $this;
         $part->field = $this->field;
     }
@@ -932,7 +933,7 @@ class CompoundFieldPart extends FieldPart implements PartParent {
                 $next = min($next,$t);
             }
         }
-        return next;
+        return $next;
     }
 }
 
